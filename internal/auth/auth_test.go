@@ -14,9 +14,9 @@ func TestGetAPIKey(t *testing.T) {
 		expectedErr   string
 		expectedValue string
 	}{
-		{name: "Get API Key", expectedErr: "no error", expectedValue: "test", headerKey: "Authorization", headerValue: "ApiKey -"},
-		{name: "No authorization", expectedErr: "test"},
-		{name: "Malformed Authorization header ApiKey but no actual value", expectedErr: "test", headerKey: "Authorization"},
+		{name: "Get API Key", expectedErr: "no error", expectedValue: "test", headerKey: "Authorization", headerValue: "ApiKey test"},
+		{name: "No authorization", expectedErr: "no authorization"},
+		{name: "Malformed Authorization header ApiKey but no actual value", expectedErr: "no authorization", headerKey: "Authorization"},
 		{name: "Malformed Authorization header with no ApiKey format", expectedErr: "malformed authorization header", headerKey: "Authorization", headerValue: "ApiKey"},
 	}
 	for _, test := range tests {
